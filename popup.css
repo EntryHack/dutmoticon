@@ -1,0 +1,135 @@
+* {
+  font-family: "Onest", "Pretendard Variable" !important;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 24rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 1rem 0.5rem 1rem;
+}
+
+.logo > .icon {
+  height: 2.2rem;
+  margin-right: 0.5rem;
+}
+
+.logo > .title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.container {
+  background-color: #f2f2f2;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 1px 0px inset;
+  display: flex;
+  flex-direction: column;
+}
+
+.emoticon-list {
+  margin: 0;
+  padding: 1rem 0.7rem 0.7rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem 0;
+  list-style: none;
+}
+
+.emoticon-list > .no-emoticon {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.7rem 0;
+  text-align: center;
+}
+
+.emoticon-list > .item {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 1px 0px;
+}
+
+.emoticon-list > .item.store {
+  display: flex;
+  justify-content: center;
+}
+
+.emoticon-list > .item > .icon {
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.emoticon-list > .item > .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #262626;
+}
+
+.emoticon-list > .item > .remove {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: auto;
+  color: #f43f5e;
+  background-color: transparent;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: 0;
+  appearance: none;
+}
+
+.emoticon-list > .item > .remove:hover {
+  background-color: #fff1f2;
+}
+
+.emoticon-store {
+  background-color: #126fff;
+  color: white;
+  font-size: 1.125rem;
+  line-height: 1rem;
+  display: inline-block;
+  height: max-content;
+  width: max-content;
+  margin: 0.3rem auto 1rem auto;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.footer {
+  background-color: #f9f9f9;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .icon {
+  height: 1.5rem;
+}
+
+.footer .info {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #404040;
+}

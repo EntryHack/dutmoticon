@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Onest";
+  font-weight: 300;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestThin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 400;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 500;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 600;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 700;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 800;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-weight: 900;
+  font-style: normal;
+  src: url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/onest/OnestBlack.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 100 900;
+  font-style: normal;
+  src: local("Pretendard Variable"),
+    url("chrome-extension://oggpiephocgmikpopbdgeiegpepkfipf/fonts/pretendard/PretendardVariable.woff2")
+      format("woff2-variations");
+}
