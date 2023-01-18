@@ -44,6 +44,8 @@ window.delayLoading = false;
 window.fetch = async (input, config) => {
   try {
     if (!config) config = {};
+    if (!config.headers) config.headers = { "if-none-match": null };
+    if (config.headers["if-none-match"]) config.headers["if-none-match"] = null;
     // 요청의 body가 올바른 JSON 형식이면 Object로 변환
     const body = isJSON(config.body) ? JSON.parse(config.body) : undefined;
 
@@ -71,7 +73,7 @@ window.fetch = async (input, config) => {
         body.variables.id.startsWith("dutmoticon_")
       ) {
         input = `${emoticonsHost}/api/emoticon/${body.variables.id}`;
-        config = { headers: { "if-none-match": undefined } };
+        config = { headers: { "if-none-match": null } };
       } else if (
         // 글/댓글에 Dutmoticon 커스텀 스티커가 첨부된 경우
         (body.query.trim().startsWith("mutation CREATE_ENTRYSTORY") ||
