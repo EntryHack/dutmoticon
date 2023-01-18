@@ -2,7 +2,7 @@
 const { fetch: originalFetch } = window;
 
 // 배포 시엔 false로 변경
-const isDev = true;
+const isDev = false;
 const emoticonsHost = isDev ? "http://localhost:3000" : "https://dutmoticon.tica.fun";
 
 const addedItems = JSON.parse(decodeURIComponent(escape(atob(document.querySelector("emoticon-data").textContent))));
