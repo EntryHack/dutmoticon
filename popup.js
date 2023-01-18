@@ -1,16 +1,20 @@
 import manifest from "./manifest.json" assert { type: "json" };
 
+const emoticonsHost = ["http://localhost:3000", "https://dutmoticon.tica.fun"][0];
+
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector(".footer .info .version").textContent = manifest.version;
 
-  const emoticons = (await chrome.storage.local.get(["emoticons"])).emoticons ?? [];
+  const emoticons = await (await fetch(`${emoticonsHost}/api/emoticons`)).json();
+  const ids = (await chrome.storage.sync.get(["emoticons"])).emoticons ?? [];
   const emoticonList = document.querySelector(".emoticon-list");
 
   const render = () => {
     emoticonList.innerHTML = "";
-    if (emoticons.length === 0)
+    if (ids.length === 0)
       return (emoticonList.innerHTML = '<span class="no-emoticon">설치된 이모티콘이 없어요.</span>');
-    emoticons.forEach((emoticon) => {
+    ids.forEach((id) => {
+      const emoticon = emoticons.find((emoticon) => emoticon.id === id);
       const item = document.createElement("li");
       const icon = document.createElement("img");
       const title = document.createElement("div");
@@ -28,16 +32,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       title.textContent = emoticon.title;
       remove.textContent = "제거";
 
-      remove.addEventListener("click", async () => {
+      remove.onclick = async () => {
         if (confirm(`"${emoticon.title}" 이모티콘을 삭제하시겠어요?`)) {
-          const index = emoticons.findIndex((e) => e.id === emoticon.id);
+          const index = ids.indexOf(id);
           if (index === -1) return alert("존재하지 않는 이모티콘이에요.");
 
-          emoticons.splice(index, 1);
-          chrome.storage.local.set({ emoticons });
+          ids.splice(index, 1);
+          chrome.storage.sync.set({ emoticons: ids });
           render();
         }
-      });
+      };
 
       item.appendChild(icon);
       item.appendChild(title);

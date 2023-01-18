@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Dutmoticon",
-  "version": "1.0.0",
-  "description": "Add new emoticon sets to the playentry.org community!",
+  "version": "3.0.0",
+  "description": "엔트리에서 더 많은 스티커를 사용하세요",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
@@ -17,12 +17,12 @@
     "service_worker": "background.js"
   },
   "permissions": ["storage", "unlimitedStorage", "scripting", "webNavigation", "tabs"],
-  "host_permissions": ["https://playentry.org/*", "https://raw.githack.com/*"],
+  "host_permissions": ["https://playentry.org/*"],
   "content_scripts": [
     { "js": ["entry.js"], "matches": ["https://playentry.org/*"] },
     {
       "js": ["store.js"],
-      "matches": ["https://dutmoticon.tica.fun/*", "http://localhost:5173/*", "http://localhost:4173/*"]
+      "matches": ["https://dutmoticon.tica.fun/*", "http://localhost:3000/*"]
     }
   ],
   "web_accessible_resources": [{ "resources": ["injected.js"], "matches": ["https://playentry.org/*"] }]
