@@ -16,7 +16,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "unlimitedStorage", "scripting", "webNavigation", "tabs"],
+  "permissions": ["storage", "unlimitedStorage", "tabs"],
   "host_permissions": ["https://playentry.org/*"],
   "content_scripts": [
     { "js": ["entry.js"], "matches": ["https://playentry.org/*"] },
