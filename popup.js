@@ -1,6 +1,8 @@
 import manifest from "./manifest.json" assert { type: "json" };
 
-const emoticonsHost = ["http://localhost:3000", "https://dutmoticon.tica.fun"][0];
+// 배포 시엔 false로 변경
+const isDev = false;
+const emoticonsHost = isDev ? "http://localhost:3000" : "https://dutmoticon.tica.fun";
 
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector(".footer .info .version").textContent = manifest.version;
