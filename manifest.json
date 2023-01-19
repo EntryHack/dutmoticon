@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Dutmoticon",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "엔트리에서 더 많은 스티커를 사용하세요",
   "icons": {
     "16": "images/icon-16.png",
