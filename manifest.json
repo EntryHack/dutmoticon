@@ -25,5 +25,10 @@
       "matches": ["https://dutmoticon.tica.fun/*", "http://localhost:3000/*"]
     }
   ],
-  "web_accessible_resources": [{ "resources": ["injected.js"], "matches": ["https://playentry.org/*"] }]
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js", "profile.js"],
+      "matches": ["https://playentry.org/*"]
+    }
+  ]
 }

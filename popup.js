@@ -7,7 +7,7 @@ const emoticonsHost = isDev ? "http://localhost:3000" : "https://dutmoticon.tica
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelector(".footer .info .version").textContent = manifest.version;
 
-  const emoticons = await (await fetch(`${emoticonsHost}/api/emoticons`)).json();
+  const emoticons = await (await fetch(`${emoticonsHost}/api/emoticons?all=true`)).json();
   const ids = (await chrome.storage.sync.get(["emoticons"])).emoticons ?? [];
   const emoticonList = document.querySelector(".emoticon-list");
 

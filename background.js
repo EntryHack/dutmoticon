@@ -16,3 +16,10 @@ chrome.tabs.onUpdated.addListener((tabId, info) => {
     return;
   chrome.tabs.sendMessage(tabId, "STORE_DETAILS");
 });
+
+chrome.tabs.onUpdated.addListener((tabId, info) => {
+  if (!info.url?.startsWith("https://playentry.org")) return;
+  if (info.url?.startsWith("https://playentry.org/profile/63c8b22fa5b63f00370433bf"))
+    chrome.tabs.sendMessage(tabId, "DUTMOTICON_PROFILE");
+  else chrome.tabs.sendMessage(tabId, "NOT_DUTMOTICON_PROFILE");
+});
