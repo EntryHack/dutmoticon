@@ -10,16 +10,15 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 
 chrome.tabs.onUpdated.addListener((tabId, info) => {
   if (
-    !info.url?.startsWith("http://localhost:3000/emoticon/") &&
-    !info.url?.startsWith("https://dutmoticon.tica.fun/emoticon/")
+    info.url?.startsWith("http://localhost:3000/emoticon/") ||
+    info.url?.startsWith("https://dutmoticon.tica.fun/emoticon/")
   )
-    return;
-  chrome.tabs.sendMessage(tabId, "STORE_DETAILS");
-});
-
-chrome.tabs.onUpdated.addListener((tabId, info) => {
-  if (!info.url?.startsWith("https://playentry.org")) return;
-  if (info.url?.startsWith("https://playentry.org/profile/63c8b22fa5b63f00370433bf"))
-    chrome.tabs.sendMessage(tabId, "DUTMOTICON_PROFILE");
-  else chrome.tabs.sendMessage(tabId, "NOT_DUTMOTICON_PROFILE");
+    chrome.tabs.sendMessage(tabId, "STORE_DETAILS");
+  else if (info.url?.startsWith("https://playentry.org")) {
+    if (info.url?.startsWith("https://playentry.org/profile/63c8b22fa5b63f00370433bf"))
+      chrome.tabs.sendMessage(tabId, "DUTMOTICON_PROFILE");
+    else if (info.url?.startsWith("https://playentry.org/community/entrystory/"))
+      chrome.tabs.sendMessage(tabId, "ENTRYSTORY");
+    else chrome.tabs.sendMessage(tabId, "OTHER_PAGE");
+  }
 });

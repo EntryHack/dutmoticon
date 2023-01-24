@@ -27,7 +27,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["injected.js", "profile.js"],
+      "resources": ["injected.js", "profile.js", "entrystory.js"],
       "matches": ["https://playentry.org/*"]
     }
   ]
